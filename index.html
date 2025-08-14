@@ -5,199 +5,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Portfolio Website</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    
+    <title>Khaled Sharafeddin - Portfolio</title>
 </head>
 
 <body>
     <div id="particles-js"></div>
+    
+    <!-- Include Sections -->
+    <div data-include="sections/header.html"></div>
+    <div data-include="sections/hero.html"></div>
+    <div data-include="sections/about.html"></div>
+    <div data-include="sections/projects.html"></div>
+    <div data-include="sections/contact.html"></div>
 
-    <header>
-        <nav>
-            <a href="#home" class="active">About me</a>
-            <a href="#projects">Projects</a>
-        </nav>
-
-        <!-- Mobile Menu Toggle -->
-        <div class="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-
-    <!-- Home Section -->
-    <section class="home" id="home">
-        <div class="home-inner">
-            <div class="home-img">
-                <img src="images/logo.jpeg" alt="Profile image" />
-            </div>
-
-            <div class="home-content">
-                <div class="home-heading-bg">
-                    <h1>Hey, I'm <span>Khaled</span></h1>
-                </div>
-
-                <h3 class="typing-text">I'm a <span>Developer</span><span class="cursor"></span></h3>
-
-                <p>
-                    I'm a computer science student currently exploring different areas in tech. I'm curious about how
-                    things
-                    work and enjoy learning new skills, whether it's coding, problem-solving, or experimenting with
-                    creative
-                    ideas. I'm still discovering what I enjoy most, and I'm excited to see where this journey takes me.
-                </p>
-
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/khaled-sharafeddin/" target="_blank">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/kxredo" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/khaledsharaff/" target="_blank">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </div>
-
-                <a href="mailto:khaled.sharafeddin@outlook.com" class="btn">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/chess-preview.png" alt="Chess Game Preview" />
-                </div>
-                <div class="project-content">
-                    <h3>Custom Chess Game</h3>
-                    <p>A chess application with two modes: Standard Chess and Custom Chess. Features an intuitive UI and
-                        game logic built from scratch.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Swing</span>
-                        <span class="tech-tag">OOP</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/kxredo/custom-chess" target="_blank" class="project-link">
-                            <i class="fa-brands fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/hospital-dbms.png" alt="Hospital Management System Preview" />
-                </div>
-                <div class="project-content">
-                    <h3>Hospital Management System</h3>
-                    <p>A desktop application built with Java, Swing (for UI), and MySQL to streamline hospital
-                        operations. It provides an efficient, user-friendly interface for managing hospital workflows.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Swing</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">JDBC</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/kxredo/Hospital_DBMS" target="_blank" class="project-link">
-                            <i class="fa-brands fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more project-card blocks here -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/sentiment.jpg" alt="Sentiment Analysis" />
-                </div>
-                <div class="project-content">
-                    <h3>Sentiment Analysis</h3>
-                    <p>This project explores and compares different approaches to sentiment analysis - the task of
-                        automatically determining whether a piece of text expresses positive or negative sentiment.
-                        Sentiment analysis is widely used in business intelligence, social media monitoring, customer
-                        feedback analysis, and market research.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Machine Learning</span>
-                        <span class="tech-tag">Pandas</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/kxredo/sentiment-analysis" target="_blank" class="project-link">
-                            <i class="fa-brands fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/car-rental.png" alt="Car Rental System" />
-                </div>
-                <div class="project-content">
-                    <h3>Car Rental Management System</h3>
-                    <p>The Car Rental System is a Spring Boot-based application designed to manage car rentals. This project demonstrates a layered architecture using Spring Boot, JPA, and MySQL, providing a RESTful API for all operations.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">JPA</span>
-                        <span class="tech-tag">SQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/kxredo/carRental" target="_blank" class="project-link">
-                            <i class="fa-brands fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Particles JS -->
+    <!-- Scripts -->
+    <script src="js/includeHTML.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#6a4bb7" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5 },
-                "size": { "value": 3, "random": true },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#6a4bb7",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 3,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out"
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "repulse" },
-                    "onclick": { "enable": true, "mode": "push" }
-                },
-                "modes": {
-                    "repulse": { "distance": 100, "duration": 0.4 },
-                    "push": { "particles_nb": 4 }
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
+    <script src="js/particles.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
