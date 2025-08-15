@@ -403,6 +403,11 @@
     }
 }
 
+/* Update skill items to be darker */
+.skill-item {
+    background: linear-gradient(145deg, rgba(15, 8, 25, 0.98), rgba(8, 4, 15, 0.95));
+}
+
 /* Add special animations for different skill types */
 .skill-card[data-skill="frontend"] .skill-icon i {
     animation: bounce 2s ease-in-out infinite;

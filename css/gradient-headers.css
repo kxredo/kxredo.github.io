@@ -1,252 +1,297 @@
-/* Animated Gradient Headers for All Sections */
+/* Gradient Header Styles - Based on "Let's Connect" Design */
 
 .gradient-header {
-    font-size: 4rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 4rem; /* Increased for the separator */
-    background: linear-gradient(
-        90deg,
-        #2E073F,
-        #7A1CAC,
-        #AD49E1,
-        #EBD3F8,
-        #2E073F
-    );
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientFlow 5s linear infinite;
     position: relative;
-}
-
-/* Add gradient separator line under headers */
-.gradient-header::after {
-    content: '';
-    position: absolute;
-    bottom: -2rem; /* Position below the text */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px; /* Adjust width as needed */
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #7A1CAC,
-        #AD49E1,
-        #EBD3F8,
-        #AD49E1,
-        #7A1CAC,
-        transparent
-    );
-    background-size: 200% 100%;
-    animation: gradientFlow 5s linear infinite;
-}
-
-/* Updated gradient flow for left to right movement */
-@keyframes gradientFlow {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}
-
-/* Update the glow effect to match */
-.gradient-header::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(46, 7, 63, 0.3),
-        rgba(122, 28, 172, 0.3),
-        rgba(173, 73, 225, 0.3),
-        rgba(235, 211, 248, 0.3)
-    );
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: blur(2px);
-    z-index: -1;
-    animation: gradientFlow 5s linear infinite;
-}
-
-
-/* Alternative separator styles for different sections */
-.gradient-header.separator-wide::after {
-    width: 300px;
-}
-
-.gradient-header.separator-narrow::after {
-    width: 150px;
-}
-
-.gradient-header.separator-full::after {
-    width: 80%;
-    max-width: 400px;
-}
-
-/* Pulsing separator variant */
-.gradient-header.separator-pulse::after {
-    animation: separatorPulse 2s ease-in-out infinite;
-}
-
-@keyframes separatorPulse {
-    0%, 100% {
-        opacity: 0.8;
-        transform: translateX(-50%) scaleX(1);
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(-50%) scaleX(1.1);
-    }
-}
-
-/* Alternative pulsing gradient animation */
-.gradient-header-pulse {
-    font-size: 4rem;
-    font-weight: 600;
+    display: inline-block;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 4rem;
-    background: linear-gradient(
-        90deg,
-        #a259ff,
-        #ffffff,
-        #a259ff
-    );
-    background-size: 200% 100%;
+    margin-bottom: 2rem;
+    background: var(--gradient-full);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientPulse 3s ease-in-out infinite;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+}
+
+/* Text shimmer animation - same as "Let's Connect" */
+@keyframes textShimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Section-specific header styles */
+
+/* Hero Section Header */
+.hero-content h1 {
+    font-size: 5.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
     position: relative;
+    overflow: hidden;
 }
 
-.gradient-header-pulse::after {
-    content: '';
-    position: absolute;
-    bottom: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #a259ff,
-        #ffffff,
-        #a259ff,
-        transparent
-    );
-    background-size: 200% 100%;
-    animation: gradientPulse 3s ease-in-out infinite;
+.hero-content h1 span {
+    background: var(--gradient-full);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+    position: relative;
+    display: inline-block;
 }
 
-@keyframes gradientPulse {
-    0%, 100% {
-        background-position: 0% 0;
-    }
-    50% {
-        background-position: 100% 0;
-    }
-}
-
-/* Rainbow gradient option */
-.gradient-header-rainbow {
+/* About Section Header */
+.about-intro h2,
+.about-page h2 {
     font-size: 4rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 4rem;
-    background: linear-gradient(
-        90deg,
-        #a259ff,
-        #b39ddb,
-        #ffffff,
-        #b39ddb,
-        #a259ff
-    );
-    background-size: 300% 100%;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    background: var(--gradient-full);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbowShift 4s linear infinite;
-    position: relative;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+    text-align: center;
 }
 
-.gradient-header-rainbow::after {
-    content: '';
-    position: absolute;
-    bottom: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #a259ff,
-        #b39ddb,
-        #ffffff,
-        #b39ddb,
-        #a259ff,
-        transparent
-    );
-    background-size: 300% 100%;
-    animation: rainbowShift 4s linear infinite;
+/* Skills Section Header */
+.skills-header h2 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+    text-align: center;
 }
 
-@keyframes rainbowShift {
-    0% {
-        background-position: -300% 0;
-    }
-    100% {
-        background-position: 300% 0;
-    }
+/* Projects Section Header */
+.projects-container h2 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+    text-align: center;
 }
 
-/* Responsive adjustments */
+/* Contact Section Headers */
+.contact-header h2 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+    text-align: center;
+}
+
+.contact-intro h3 {
+    color: #fff;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+    text-align: center;
+}
+
+/* Subsection Headers */
+.story-section h2,
+.education-header h2 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+}
+
+/* Social Links Headers */
+.social-links h4,
+.hero-social h4 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+}
+
+/* Small Headers */
+.trait-card h3,
+.skill-category h3 {
+    color: #fff;
+    font-size: 1.9rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+}
+
+/* Project Titles */
+.project-item h3 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+}
+
+/* Footer Logo */
+.footer-logo h3 {
+    color: var(--primary-purple);
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 10px var(--shadow-purple));
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .gradient-header,
-    .gradient-header-pulse,
-    .gradient-header-rainbow {
-        font-size: 3rem;
-        margin-bottom: 3rem;
+    .hero-content h1 {
+        font-size: 4.5rem;
     }
     
-    .gradient-header::after,
-    .gradient-header-pulse::after,
-    .gradient-header-rainbow::after {
-        width: 150px;
-        bottom: -1.5rem;
+    .about-intro h2,
+    .about-page h2,
+    .skills-header h2,
+    .projects-container h2,
+    .contact-header h2 {
+        font-size: 3.2rem;
     }
     
-    .gradient-header.separator-full::after {
-        width: 70%;
-        max-width: 250px;
+    .contact-intro h3 {
+        font-size: 2.2rem;
+    }
+    
+    .story-section h2,
+    .education-header h2 {
+        font-size: 2.4rem;
+    }
+    
+    .social-links h4,
+    .hero-social h4 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-logo h3 {
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .gradient-header,
-    .gradient-header-pulse,
-    .gradient-header-rainbow {
-        font-size: 2.5rem;
+    .hero-content h1 {
+        font-size: 3rem;
     }
     
-    .gradient-header::after,
-    .gradient-header-pulse::after,
-    .gradient-header-rainbow::after {
-        width: 120px;
+    .about-intro h2,
+    .about-page h2,
+    .skills-header h2,
+    .projects-container h2,
+    .contact-header h2 {
+        font-size: 2.8rem;
     }
     
-    .gradient-header.separator-full::after {
-        width: 60%;
-        max-width: 200px;
+    .contact-intro h3 {
+        font-size: 2rem;
     }
+    
+    .story-section h2,
+    .education-header h2 {
+        font-size: 2rem;
+    }
+    
+    .trait-card h3,
+    .skill-category h3 {
+        font-size: 1.6rem;
+    }
+    
+    .project-item h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Special animation for main section headers */
+.gradient-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: underlineGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes underlineGlow {
+    0% { 
+        box-shadow: 0 0 5px var(--shadow-purple);
+        width: 60px;
+    }
+    100% { 
+        box-shadow: 0 0 15px var(--shadow-accent);
+        width: 80px;
+    }
+}
+
+/* Remove underline for smaller headers */
+.trait-card h3::after,
+.skill-category h3::after,
+.project-item h3::after,
+.social-links h4::after,
+.hero-social h4::after {
+    display: none;
 }

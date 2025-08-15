@@ -1,4 +1,4 @@
-/* filepath: css/main.css */
+/* Simplified main.css - remove redundant styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -19,6 +19,20 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* Add a global dark overlay to make everything darker while keeping transparency */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* Particles Background */
@@ -30,6 +44,16 @@ body {
     left: 0;
     z-index: -1;
     background: var(--bg-primary);
+}
+
+/* Make sure all sections are above the overlay */
+section {
+    min-height: 100vh;
+    padding: 8rem 9% 5rem 9%;
+    background: transparent;
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 1;
 }
 
 /* Selection Color */
@@ -65,86 +89,4 @@ body {
 *:focus {
     outline: 2px solid var(--primary-purple);
     outline-offset: 2px;
-}
-
-section {
-    min-height: 100vh;
-    padding: 8rem 9% 5rem 9%;
-    background: transparent;
-    scroll-snap-align: start; /* Keep this for main sections */
-}
-
-/* Common buttons */
-.btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    border-radius: 12px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background: #a259ff;
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background: #6a4bb7;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #a259ff;
-    border: 2px solid #a259ff;
-}
-
-.btn-secondary:hover {
-    background: #a259ff;
-    color: #fff;
-}
-
-/* Scroll down indicator */
-.scroll-down {
-    position: absolute;
-    bottom: 40px;
-    left: 9%;
-    color: #eaeaea;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    opacity: 0.8;
-    z-index: 2;
-}
-
-.scroll-down i {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Remove scroll-snap-align from footer */
-.footer {
-    background: rgba(0, 0, 0, 0.95);
-    border-top: 1px solid rgba(162, 89, 255, 0.2);
-    padding: 3rem 5% 2rem 5%;
-    margin-top: 5rem;
-    position: relative;
-    z-index: 1;
-    /* Do NOT add scroll-snap-align here */
 }

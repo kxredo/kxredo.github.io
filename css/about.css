@@ -148,7 +148,7 @@
 }
 
 .trait-card {
-    background: linear-gradient(135deg, rgba(162, 89, 255, 0.15), rgba(106, 75, 183, 0.08));
+    background: linear-gradient(145deg, rgba(15, 8, 25, 0.98), rgba(8, 4, 15, 0.95));
     border: 1px solid rgba(162, 89, 255, 0.3);
     border-radius: 20px;
     padding: 2.5rem;
@@ -224,7 +224,7 @@
 
 /* Education Section with 3D Effects */
 .education-section {
-    background: linear-gradient(135deg, rgba(162, 89, 255, 0.15), rgba(106, 75, 183, 0.08));
+    background: linear-gradient(145deg, rgba(15, 8, 25, 0.98), rgba(8, 4, 15, 0.95));
     border: 1px solid rgba(162, 89, 255, 0.3);
     border-radius: 24px;
     padding: 3.5rem;
@@ -355,7 +355,7 @@
 }
 
 .stat-card {
-    background: linear-gradient(135deg, rgba(162, 89, 255, 0.2), rgba(106, 75, 183, 0.1));
+    background: linear-gradient(145deg, rgba(15, 8, 25, 0.98), rgba(8, 4, 15, 0.95));
     border: 2px solid rgba(162, 89, 255, 0.4);
     border-radius: 20px;
     padding: 2.5rem;
