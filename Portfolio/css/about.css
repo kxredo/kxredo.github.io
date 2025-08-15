@@ -1,0 +1,592 @@
+.about-page {
+    min-height: 100vh;
+    padding: 8rem 5% 5rem 5%;
+    background: transparent;
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Animated background with floating elements */
+.about-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(162, 89, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(122, 28, 172, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 85%, rgba(173, 73, 225, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 25% 75%, rgba(235, 211, 248, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+    animation: floatingOrbs 20s ease-in-out infinite;
+}
+
+@keyframes floatingOrbs {
+    0%, 100% { 
+        background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%;
+    }
+    25% { 
+        background-position: 100% 25%, 75% 100%, 0% 75%, 25% 0%;
+    }
+    50% { 
+        background-position: 75% 100%, 0% 75%, 25% 0%, 100% 25%;
+    }
+    75% { 
+        background-position: 0% 75%, 25% 0%, 100% 25%, 75% 100%;
+    }
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.about-intro {
+    text-align: center;
+    margin-bottom: 6rem;
+    position: relative;
+    animation: fadeInScale 1s ease-out both;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+}
+
+/* Story Section with Enhanced Effects */
+.story-section {
+    animation: slideInLeft 1s ease-out 0.3s both;
+    position: relative;
+}
+
+.story-section h2 {
+    color: #ffffff;
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, #fff, #d1c4e9, #a259ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 4s ease-in-out infinite alternate;
+    position: relative;
+}
+
+.story-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #a259ff, #7A1CAC, #AD49E1);
+    border-radius: 2px;
+    animation: lineGrow 1s ease-out 1s both;
+}
+
+@keyframes lineGrow {
+    from { width: 0; }
+    to { width: 80px; }
+}
+
+.story-section h2 i {
+    color: #a259ff;
+    font-size: 3.5rem;
+    filter: drop-shadow(0 0 5px rgba(162, 89, 255, 0.3)); /* Reduced from 15px/0.5 */
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+.story-section p {
+    font-size: 1.7rem;
+    line-height: 1.9;
+    color: #d1c4e9;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+.story-section p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    width: 4px;
+    height: 80%;
+    background: linear-gradient(180deg, #a259ff, transparent);
+    border-radius: 2px;
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.story-section p:hover {
+    color: #ebd3f8;
+    transform: translateX(5px);
+}
+
+/* Enhanced Traits Grid */
+.traits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.trait-card {
+    background: linear-gradient(135deg, rgba(162, 89, 255, 0.15), rgba(106, 75, 183, 0.08));
+    border: 1px solid rgba(162, 89, 255, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.trait-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(162, 89, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.trait-card:hover::before {
+    left: 100%;
+}
+
+.trait-card:hover {
+    transform: translateY(-10px) rotateY(5deg) scale(1.02);
+    border-color: rgba(162, 89, 255, 0.6);
+    box-shadow: 
+        0 15px 30px rgba(162, 89, 255, 0.05),
+        0 0 0 1px rgba(162, 89, 255, 0.02);
+    background: linear-gradient(135deg, rgba(162, 89, 255, 0.18), rgba(106, 75, 183, 0.1));
+}
+
+.trait-card i {
+    font-size: 3.5rem;
+    color: #a259ff;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 3px rgba(162, 89, 255, 0.2));
+    transition: all 0.4s ease;
+}
+
+.trait-card:hover i {
+    color: #fff;
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 5px rgba(162, 89, 255, 0.3));
+}
+
+.trait-card h3 {
+    color: #fff;
+    font-size: 1.9rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.trait-card:hover h3 {
+    color: #ebd3f8;
+    transform: translateY(-2px);
+}
+
+.trait-card p {
+    color: #b39ddb;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.trait-card:hover p {
+    color: #d1c4e9;
+}
+
+/* Education Section with 3D Effects */
+.education-section {
+    background: linear-gradient(135deg, rgba(162, 89, 255, 0.15), rgba(106, 75, 183, 0.08));
+    border: 1px solid rgba(162, 89, 255, 0.3);
+    border-radius: 24px;
+    padding: 3.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: slideInRight 1s ease-out 0.5s both;
+}
+
+.education-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(162, 89, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.education-section:hover::before {
+    left: 100%;
+}
+
+.education-section:hover {
+    transform: translateY(-10px) rotateY(5deg) scale(1.02);
+    border-color: rgba(162, 89, 255, 0.6);
+    box-shadow: 
+        0 15px 30px rgba(162, 89, 255, 0.05),
+        0 0 0 1px rgba(162, 89, 255, 0.02);
+    background: linear-gradient(135deg, rgba(162, 89, 255, 0.18), rgba(106, 75, 183, 0.1));
+}
+
+.education-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.education-header i {
+    font-size: 4rem;
+    color: #a259ff;
+    filter: drop-shadow(0 0 3px rgba(162, 89, 255, 0.2)); /* Reduced from 8px/0.3 */
+    transition: all 0.4s ease;
+}
+
+.education-section:hover .education-header i {
+    color: #fff;
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 5px rgba(162, 89, 255, 0.3)); /* Reduced from 12px/0.5 */
+}
+
+.education-header-text h2 {
+    color: #fff;
+    font-size: 2.8rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #d1c4e9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.education-section:hover .education-header-text h2 {
+    transform: translateY(-2px);
+}
+
+.education-header-text p {
+    color: #b39ddb;
+    font-size: 1.5rem;
+    margin: 0;
+    opacity: 0.9;
+    transition: color 0.3s ease;
+}
+
+.education-section:hover .education-header-text p {
+    color: #d1c4e9;
+}
+
+.education-content h3 {
+    color: #a259ff;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.education-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #a259ff, transparent);
+    border-radius: 1px;
+}
+
+.university {
+    color: #a259ff;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.education-description {
+    color: #d1c4e9;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+/* Enhanced Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, rgba(162, 89, 255, 0.2), rgba(106, 75, 183, 0.1));
+    border: 2px solid rgba(162, 89, 255, 0.4);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 40px rgba(162, 89, 255, 0.15);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(162, 89, 255, 0.1) 50%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.05) rotateY(5deg);
+    box-shadow: 
+        0 15px 30px rgba(162, 89, 255, 0.08),
+        0 0 0 1px rgba(162, 89, 255, 0.05);
+    border-color: rgba(162, 89, 255, 0.8);
+    background: linear-gradient(135deg, rgba(162, 89, 255, 0.3), rgba(106, 75, 183, 0.2));
+}
+
+.stat-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(135deg, #fff, #ebd3f8, #a259ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textShimmer 3s ease-in-out infinite alternate;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-number {
+    transform: scale(1.1);
+}
+
+.stat-label {
+    color: #b39ddb;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.stat-card:hover .stat-label {
+    color: #ebd3f8;
+}
+
+/* Add floating icons animation */
+.floating-icon {
+    position: absolute;
+    color: rgba(162, 89, 255, 0.1);
+    font-size: 2rem;
+    animation: floatIcon 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.floating-icon:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-icon:nth-child(2) {
+    top: 70%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.floating-icon:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes floatIcon {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.1;
+    }
+    50% { 
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 0.3;
+    }
+}
+
+/* Common animations */
+@keyframes textShimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .traits-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        padding: 6rem 3% 3rem 3%;
+    }
+    
+    .story-section h2 {
+        font-size: 2.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .story-section h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .story-section p {
+        font-size: 1.5rem;
+        padding-left: 0;
+    }
+    
+    .story-section p::before {
+        display: none;
+    }
+    
+    .trait-card,
+    .education-section {
+        padding: 2.5rem;
+    }
+    
+    .education-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trait-card,
+    .education-section {
+        padding: 2rem;
+    }
+    
+    .education-header i {
+        font-size: 3rem;
+    }
+    
+    .education-header-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .stat-card {
+        padding: 2rem;
+    }
+    
+    .floating-icon {
+        display: none;
+    }
+}

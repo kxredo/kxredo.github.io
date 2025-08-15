@@ -1,0 +1,252 @@
+/* Animated Gradient Headers for All Sections */
+
+.gradient-header {
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem; /* Increased for the separator */
+    background: linear-gradient(
+        90deg,
+        #2E073F,
+        #7A1CAC,
+        #AD49E1,
+        #EBD3F8,
+        #2E073F
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 5s linear infinite;
+    position: relative;
+}
+
+/* Add gradient separator line under headers */
+.gradient-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem; /* Position below the text */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px; /* Adjust width as needed */
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #7A1CAC,
+        #AD49E1,
+        #EBD3F8,
+        #AD49E1,
+        #7A1CAC,
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: gradientFlow 5s linear infinite;
+}
+
+/* Updated gradient flow for left to right movement */
+@keyframes gradientFlow {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Update the glow effect to match */
+.gradient-header::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(46, 7, 63, 0.3),
+        rgba(122, 28, 172, 0.3),
+        rgba(173, 73, 225, 0.3),
+        rgba(235, 211, 248, 0.3)
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: blur(2px);
+    z-index: -1;
+    animation: gradientFlow 5s linear infinite;
+}
+
+
+/* Alternative separator styles for different sections */
+.gradient-header.separator-wide::after {
+    width: 300px;
+}
+
+.gradient-header.separator-narrow::after {
+    width: 150px;
+}
+
+.gradient-header.separator-full::after {
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Pulsing separator variant */
+.gradient-header.separator-pulse::after {
+    animation: separatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes separatorPulse {
+    0%, 100% {
+        opacity: 0.8;
+        transform: translateX(-50%) scaleX(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scaleX(1.1);
+    }
+}
+
+/* Alternative pulsing gradient animation */
+.gradient-header-pulse {
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(
+        90deg,
+        #a259ff,
+        #ffffff,
+        #a259ff
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientPulse 3s ease-in-out infinite;
+    position: relative;
+}
+
+.gradient-header-pulse::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #a259ff,
+        #ffffff,
+        #a259ff,
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: gradientPulse 3s ease-in-out infinite;
+}
+
+@keyframes gradientPulse {
+    0%, 100% {
+        background-position: 0% 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+/* Rainbow gradient option */
+.gradient-header-rainbow {
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(
+        90deg,
+        #a259ff,
+        #b39ddb,
+        #ffffff,
+        #b39ddb,
+        #a259ff
+    );
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowShift 4s linear infinite;
+    position: relative;
+}
+
+.gradient-header-rainbow::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #a259ff,
+        #b39ddb,
+        #ffffff,
+        #b39ddb,
+        #a259ff,
+        transparent
+    );
+    background-size: 300% 100%;
+    animation: rainbowShift 4s linear infinite;
+}
+
+@keyframes rainbowShift {
+    0% {
+        background-position: -300% 0;
+    }
+    100% {
+        background-position: 300% 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gradient-header,
+    .gradient-header-pulse,
+    .gradient-header-rainbow {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    .gradient-header::after,
+    .gradient-header-pulse::after,
+    .gradient-header-rainbow::after {
+        width: 150px;
+        bottom: -1.5rem;
+    }
+    
+    .gradient-header.separator-full::after {
+        width: 70%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gradient-header,
+    .gradient-header-pulse,
+    .gradient-header-rainbow {
+        font-size: 2.5rem;
+    }
+    
+    .gradient-header::after,
+    .gradient-header-pulse::after,
+    .gradient-header-rainbow::after {
+        width: 120px;
+    }
+    
+    .gradient-header.separator-full::after {
+        width: 60%;
+        max-width: 200px;
+    }
+}

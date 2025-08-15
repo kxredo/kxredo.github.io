@@ -1,0 +1,155 @@
+/* Design System - Color Variables and Global Styles */
+
+:root {
+    /* Primary Colors */
+    --primary-purple: #a259ff;
+    --primary-purple-dark: #6a4bb7;
+    --primary-purple-light: #b39ddb;
+    --primary-purple-lighter: #d1c4e9;
+    --primary-purple-pale: #ebd3f8;
+    
+    /* Background Colors */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: rgba(24, 17, 43, 0.95);
+    --bg-card: rgba(24, 17, 43, 0.95);
+    --bg-card-hover: rgba(24, 17, 43, 1);
+    --bg-overlay: rgba(0, 0, 0, 0.3);
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #d1c4e9;
+    --text-muted: #b39ddb;
+    --text-accent: var(--primary-purple);
+    
+    /* Border Colors */
+    --border-primary: rgba(162, 89, 255, 0.3);
+    --border-hover: var(--primary-purple);
+    --border-subtle: rgba(162, 89, 255, 0.1);
+    
+    /* Shadow Colors */
+    --shadow-primary: rgba(162, 89, 255, 0.2);
+    --shadow-hover: rgba(162, 89, 255, 0.4);
+    --shadow-glow: rgba(162, 89, 255, 0.15);
+    
+    /* Gradient */
+    --gradient-primary: linear-gradient(135deg, var(--primary-purple), var(--primary-purple-dark));
+    --gradient-card: linear-gradient(135deg, rgba(162, 89, 255, 0.1), rgba(106, 75, 183, 0.05));
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+    --spacing-xxl: 8rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 15px;
+    --radius-xl: 20px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Typography */
+    --font-size-xs: 1.2rem;
+    --font-size-sm: 1.4rem;
+    --font-size-base: 1.6rem;
+    --font-size-lg: 1.8rem;
+    --font-size-xl: 2.2rem;
+    --font-size-2xl: 3rem;
+    --font-size-3xl: 4rem;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Common Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 1.2rem 2.4rem;
+    border: 2px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border-color: var(--primary-purple);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+    border-color: var(--text-primary);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-purple);
+    border-color: var(--primary-purple);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-purple);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-primary);
+}
+
+/* Common Card Styles */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hover);
+    box-shadow: 0 15px 40px var(--shadow-glow);
+    background: var(--bg-card-hover);
+}
+
+/* Section Spacing */
+section {
+    min-height: 100vh;
+    padding: var(--spacing-xxl) 5% var(--spacing-xl) 5%;
+    background: transparent;
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 1;
+}
+
+/* Container Max Width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}

@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
+:root {
+    --primary-color: #a259ff;
+    --secondary-color: #6a4bb7;
+    --text-primary: #eaeaea;
+    --text-secondary: #b39ddb;
+    --background-dark: #000000;
+    --background-light: #18112b;
+    --border-color: rgba(162, 89, 255, 0.2);
+    --shadow-color: rgba(106, 75, 183, 0.3);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +25,13 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: #eaeaea;
-    background: black;
-    position: relative;
-    min-height: 100vh;
+    background-color: #000000; /* Set to pure black */
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 #particles-js {
@@ -47,7 +61,7 @@ header {
 .logo {
     font-size: 2.8rem;
     font-weight: 700;
-    color: #a259ff;
+    color: var(--primary-color);
     letter-spacing: 2px;
 }
 
@@ -66,14 +80,26 @@ nav a {
 
 nav a.active,
 nav a:hover {
-    color: #a259ff;
+    color: var(--primary-color);
 }
 
 section {
     min-height: 100vh;
     padding: 8rem 9% 5rem 9%;
-    background: transparent;
+    background-color: #000000;
+    position: relative;
     scroll-snap-align: start; /* Add this line */
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 0 8%;
+    position: relative;
+    z-index: 1;
+    background-color: #000000;
 }
 
 .home {
@@ -253,6 +279,7 @@ span {
     scroll-snap-align: start;
     position: relative;
     z-index: 1;
+    background-color: #000000;
 }
 
 .projects-section h2 {
@@ -423,6 +450,7 @@ span {
     padding: 0 8%;
     position: relative;
     z-index: 1;
+    background-color: #000000;
 }
 
 .hero-content {
@@ -532,6 +560,7 @@ span {
     scroll-snap-align: start;
     position: relative;
     z-index: 1;
+    background-color: #000000;
 }
 
 .about-container {
